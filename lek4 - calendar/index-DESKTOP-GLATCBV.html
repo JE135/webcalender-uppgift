@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yearly Calendar</title>
+    <style>
+        /* Styles for calendar layout */
+        /* ... */
+
+        /* Extra styles for the index page */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://plus.unsplash.com/premium_photo-1674258367983-5a06e54b4997?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .month {
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Rounded borders */
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .month:hover {
+            background-color: lightgrey;
+        }
+
+        .dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .date-box {
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Rounded borders */
+            padding: 5px;
+            text-align: center;
+            color: red; /* Text color */
+        }
+
+        .month a {
+            color: red; /* Month name color */
+            text-decoration: none; /* Remove default underline */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Yearly Calendar</h1>
+    <div class="calendar">
+        <!-- Generate calendar for each month -->
+        <script>
+            function generateDates(year, month) {
+                let daysInMonth;
+                if (month === 1 && isLeapYear(year)) {
+                    daysInMonth = 29; // February in leap year
+                } else {
+                    daysInMonth = new Date(year, month + 1, 0).getDate();
+                }
+
+                const datesContainer = document.getElementById(`${getMonthName(month)}Dates`);
+
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const dateBox = document.createElement('div');
+                    dateBox.classList.add('date-box');
+                    dateBox.textContent = i;
+                    datesContainer.appendChild(dateBox);
+                }
+            }
+
+            function getMonthName(month) {
+                const months = [
+                    'january', 'february', 'march', 'april',
+                    'may', 'june', 'july', 'august',
+                    'september', 'october', 'november', 'december'
+                ];
+                return months[month];
+            }
+
+            function isLeapYear(year) {
+                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            }
+
+            // Generate calendar for each month
+            for (let i = 0; i < 12; i++) {
+                const monthDiv = document.createElement('div');
+                monthDiv.classList.add('month');
+
+                const monthLink = document.createElement('a');
+                monthLink.href = `${getMonthName(i)}.html`;
+                monthLink.textContent = getMonthName(i).charAt(0).toUpperCase() + getMonthName(i).slice(1);
+                monthLink.style.color = 'red'; // Set month name color
+
+                const datesDiv = document.createElement('div');
+                datesDiv.classList.add('dates');
+                datesDiv.id = `${getMonthName(i)}Dates`;
+
+                monthDiv.appendChild(monthLink);
+                monthDiv.appendChild(datesDiv);
+
+                document.querySelector('.calendar').appendChild(monthDiv);
+
+                generateDates(2024, i); // Year 2024 is a leap year
+            }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>May 2024 Calendar</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW4lMjByYW5nZXxlbnwwfHwwfHx8MA%3D%3D');
+            /* Set background properties */
+            background-size: cover;
+            background-position: center;
+            /* Other existing styles */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Existing styles for the calendar */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            width: 12%; /* Adjusted width for the columns */
+            height: 50px;
+            text-align: center;
+            color: red; /* Text color changed to red */
+            background-color: rgba(211, 211, 211, 0.25); /* Light-grey background color with 25% opacity */
+        }
+
+        th.week,
+        td.week {
+            width: 8%; /* Adjusted width specifically for the 'Week' column */
+        }
+
+        th {
+            background-color: grey;
+        }
+
+        .faded {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-box {
+            width: calc(100% / 13);
+            border: 1px solid black;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            border-radius: 10px; /* Rounded corners */
+            background-color: beige; /* Blue color */
+            color: red; /* White text color */
+            text-decoration: none; /* Remove default underline for links */
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-buttons {
+            display: flex;
+        }
+
+        .title-buttons a {
+            margin-right: 10px;
+            border: 1px solid black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: black;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <div class="title-text">
+            <h1>May 2024</h1>
+        </div>
+        <div class="title-buttons">
+            <a href="april.html">Back</a>
+            <a href="june.html">Forward</a>
+        </div>
+    </div>
+
+    <table>
+        <!-- Calendar structure -->
+        <tr>
+            <th>Week</th> <!-- New Week column -->
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+        <!-- Week numbers added in a new column -->
+        <tr>
+            <td>18</td> <!-- Week 18 -->
+            <td class="faded">1</td>
+            <td class="faded">2</td>
+            <td class="faded">3</td>
+            <td class="faded">4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>19</td> <!-- Week 19 -->
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>20</td> <!-- Week 20 -->
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>21</td> <!-- Week 21 -->
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>22</td> <!-- Week 22 -->
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>23</td> <!-- Week 23 -->
+            <td class="faded">1</td>
+            <td class="faded">2</td>
+            <td class="faded">3</td>
+            <td class="faded">4</td>
+            <td class="faded">5</td>
+            <td class="faded">6</td>
+            <td class="faded">7</td>
+        </tr>
+        <!-- Add more rows if needed -->
+    </table>
+
+    <!-- Footer section -->
+    <div class="footer">
+        <a href="january.html" class="footer-box">January</a>
+        <a href="february.html" class="footer-box">February</a>
+        <a href="march.html" class="footer-box">March</a>
+        <a href="april.html" class="footer-box">April</a>
+        <a href="may.html" class="footer-box">May</a>
+        <a href="june.html" class="footer-box">June</a>
+        <a href="july.html" class="footer-box">July</a>
+        <a href="august.html" class="footer-box">August</a>
+        <a href="september.html" class="footer-box">September</a>
+        <a href="october.html" class="footer-box">October</a>
+        <a href="november.html" class="footer-box">November</a>
+        <a href="december.html" class="footer-box">December</a>
+        <a href="index.html" class="footer-box">Index</a>
+    </div>
+</body>
+
+</html>
